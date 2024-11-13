@@ -5,108 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Date Proposal</title>
     <style>
-        body {
-    background-color: #ffe6f7; /* Light pink background */
-    color: #f15bb5; /* Pink color for text */
-}
-
-.container {
-    background: #fff;
-    padding: 20px 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    text-align: center;
-    position: relative;
-}
-
-h1 {
-    font-size: 2.5em;
-    color: #f15bb5; /* Pink color */
-}
-
-.p {
-    font-size: 1.2em;
-    margin: 20px 0;
-    color: #f15bb5;
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.btn {
-    padding: 12px 24px;
-    font-size: 1.1em;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn-yes {
-    background-color: #f15bb5; /* Pink button */
-}
-
-.btn-no {
-    background-color: #ff577f; /* Light pink button */
-}
-
-.food-choice {
-    display: none;
-    margin-top: 20px;
-}
-
-.food-option img {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.food-option img:hover {
-    transform: scale(1.1);
-}
-
-.food-option label {
-    display: block;
-    margin-top: 5px;
-    font-size: 1em;
-    color: #f15bb5;
-}
-
-.heart {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2em;
-    color: #f15bb5;
-    animation: heartbeat 1.5s infinite;
-}
-
-@keyframes heartbeat {
-    0% {
-        transform: scale(1);
-    }
-    25% {
-        transform: scale(1.2);
-    }
-    50% {
-        transform: scale(1);
-    }
-    75% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
+    body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffe6f7;
+            font-family: 'Arial', sans-serif;
+            color: #f15bb5;
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+        .container {
+            background: #fff;
+            padding: 20px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #f15bb5;
+            font-family: 'Arial', sans-serif;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: #f15bb5;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 12px 24px;
+            font-size: 1.1em;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .btn-yes {
+            background-color: #f15bb5;
+        }
+        .btn-no {
+            background-color: #ff577f;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+        }
+        .food-choice {
+            display: none;
+            margin-top: 20px;
+        }
+        .food-option {
+            display: inline-block;
+            text-align: center;
+            margin: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+        .food-option img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .food-option img:hover {
+            transform: scale(1.1);
+        }
+        .food-option label {
+            display: block;
+            margin-top: 5px;
+            font-size: 1em;
+            color: #f15bb5;
+        }
+        .heart {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            color: #f15bb5;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.2);
+            }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+    <script>
+        function askForFood() {
+            // Hide the initial question and buttons
+            document.querySelector('.movie-question').style.display = 'none';
+            // Show the food choice section
+            document.querySelector('.food-choice').style.display = 'block';
+        }
+        
+        function confirmFoodChoice(food) {
+            alert('Great! We’ll have ' + food + ' after the movie!');
+        }
 
     </style>
     <script>
